@@ -1,6 +1,6 @@
 {
     "name": "@xccjh/vue3-theme-peel",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "vue3换肤插件",
     "keywords": "vue3,typescript,antd,换肤,切换主题",
     "main": "lib/index.js",
@@ -11,7 +11,7 @@
         "lint": "eslint src/** lib/** example/** --ext .js,.vue"
     },
     "auth": "zoujiahe",
-    "git": {
+    "repository": {
         "type": "git",
         "url": "https://gitee.com/xccjh/vue3-theme-peel"
     },
