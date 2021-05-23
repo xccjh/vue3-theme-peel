@@ -5,13 +5,22 @@
         <span class="brand">Example</span>
         <ul class="menu">
           <li class="menu-item">
-            <span style="background-color: #409eff" @click="$theme='default'"></span>
+            <span
+              style="background-color: #409eff"
+              @click="changeTheme('default')"
+            />
           </li>
           <li class="menu-item">
-            <span style="background-color: #5cb85c" @click="$theme='light'"></span>
+            <span
+              style="background-color: #5cb85c"
+              @click="changeTheme('light')"
+            />
           </li>
           <li class="menu-item">
-            <span style="background-color: #8183e2" @click="$theme='dark'"></span>
+            <span
+              style="background-color: #8183e2"
+              @click="changeTheme('dark')"
+            />
           </li>
         </ul>
       </nav>
@@ -28,6 +37,15 @@
     </footer>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    changeTheme(style) {
+      window.$theme.style = style;
+    },
+  },
+};
+</script>
 
 <style lang="less">
   header {
