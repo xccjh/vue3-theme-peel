@@ -31,7 +31,6 @@ module.exports = {
         config.module.rule(style).oneOf(item).merge({ use: originUse })
       })
     })
-
     if (!dev) {
       config.devtool('none')  // 👈 关掉css映射
       config
@@ -46,8 +45,16 @@ module.exports = {
         args[0].sourceMap = false
         return args
       })
+      config
+          .plugin('ThemeSwitchPluginInject') //  👈 注入主题变量工具函数
+          .use(ThemeSwitchPlugin.inject,[{
+                publicPath  // 👈 配置动态加载的publicPath
+            }])
+    }else {
+       config
+        .plugin('ThemeSwitchPluginInject')
+        .use(ThemeSwitchPlugin.inject)
     }
-
     config.plugin('html').tap(args => {
       const param = args[0]
       param.minify = {  // 👈 优化压缩
@@ -58,11 +65,7 @@ module.exports = {
       param.chunksSortMode = 'dependency'
       return [param]
     })
-    config
-      .plugin('ThemeSwitchPluginInject') //  👈 注入主题变量工具函数
-      .use(ThemeSwitchPlugin.inject,[{
-            publicPath  // 👈 配置动态加载的publicPath
-        }])
+ 
   }
 }
 ```
