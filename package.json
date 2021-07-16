@@ -1,6 +1,6 @@
 {
     "name": "@xccjh/vue3-theme-peel",
-    "version": "1.0.4",
+    "version": "1.0.7",
     "description": "vue3换肤插件",
     "keywords": "vue3,typescript,antd,换肤,切换主题",
     "main": "lib/index.js",
